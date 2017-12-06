@@ -3,6 +3,7 @@ package com.renj.rxjavaoperator;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
+import com.renj.rxjavaoperator.operator.CombinationOperator;
 import com.renj.rxjavaoperator.operator.CreateOperator;
 import com.renj.rxjavaoperator.operator.FilterOperator;
 import com.renj.rxjavaoperator.operator.TransformOperator;
@@ -24,7 +25,18 @@ public class MainActivity extends AppCompatActivity {
         // rxTransformOperator();
 
         // 调用过滤操作符类中的方法
-        rxFilterOperator();
+        // rxFilterOperator();
+
+        // 调用组合操作符类中的方法
+        rxCombinationOperator();
+    }
+
+    /**
+     * 调用组合操作符类中的方法
+     */
+    private void rxCombinationOperator() {
+        CombinationOperator.joinOperator();
+        // CombinationOperator.andThenWhenOperator();
     }
 
     /**
