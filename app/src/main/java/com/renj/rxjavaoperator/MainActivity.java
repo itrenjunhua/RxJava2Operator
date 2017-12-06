@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.renj.rxjavaoperator.operator.CreateOperator;
+import com.renj.rxjavaoperator.operator.FilterOperator;
 import com.renj.rxjavaoperator.operator.TransformOperator;
 
 /**
@@ -20,13 +21,32 @@ public class MainActivity extends AppCompatActivity {
         // rxCreateOperator();
 
         // 调用变换操作符类中的方法
-        transformOperator();
+        // rxTransformOperator();
+
+        // 调用过滤操作符类中的方法
+        rxFilterOperator();
+    }
+
+    /**
+     * 调用过滤操作符类中的方法
+     */
+    private void rxFilterOperator() {
+        // FilterOperator.filterOperator();
+        // FilterOperator.distinctOperator();
+        // FilterOperator.elementAtOperator();
+        // FilterOperator.debounceOperator();
+        // FilterOperator.ignoreElementsOperator();
+        // FilterOperator.sampleOperator();
+        // FilterOperator.firstOperator();
+        // FilterOperator.lastOperator();
+        // FilterOperator.skipOperator();
+        FilterOperator.takeOperator();
     }
 
     /**
      * 调用变换操作符类中的方法
      */
-    private void transformOperator() {
+    private void rxTransformOperator() {
         // TransformOperator.mapOpertor();
         // TransformOperator.flatMapOperator();
         // TransformOperator.reduceOperator();
