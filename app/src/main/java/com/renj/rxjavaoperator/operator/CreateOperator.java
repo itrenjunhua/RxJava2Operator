@@ -20,7 +20,8 @@ import io.reactivex.functions.Consumer;
  * <p>
  * 创建时间：2017-12-06   10:52
  * <p>
- * 描述：RxJava2操作符之创建操作符
+ * 描述：RxJava2操作符之创建操作符<br/>
+ * 主要包含 create、just、fromXxx、empty、never、error、range、defer、repat、timer、interval、intervalRange 操作符及他们的重载方法
  * <p>
  * 修订历史：
  * <p>
