@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.renj.rxjavaoperator.operator.CombinationOperator;
+import com.renj.rxjavaoperator.operator.ConditionalAndBooleanOperator;
 import com.renj.rxjavaoperator.operator.CreateOperator;
 import com.renj.rxjavaoperator.operator.ErrorHandlerOperator;
 import com.renj.rxjavaoperator.operator.FilterOperator;
@@ -36,7 +37,23 @@ public class MainActivity extends AppCompatActivity {
         // rxErrorHandlerOperator();
 
         // 调用辅助操作符类中的方法
-        rxUtilityOperator();
+        // rxUtilityOperator();
+
+        // 调用条件和布尔操作符类中的方法
+        rxConditionalAndBooleanOperator();
+    }
+
+    /**
+     * 调用条件和布尔操作符类中的方法
+     */
+    private void rxConditionalAndBooleanOperator() {
+        // ConditionalAndBooleanOperator.allOperator();
+        // ConditionalAndBooleanOperator.ambOperator();
+        // ConditionalAndBooleanOperator.containsOperator();
+        // ConditionalAndBooleanOperator.sequenceEqualOperator();
+        // ConditionalAndBooleanOperator.emptyOperator();
+        // ConditionalAndBooleanOperator.skipOperator();
+        ConditionalAndBooleanOperator.takeOperator();
     }
 
     /**
@@ -50,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         // UtilityOperator.timeIntervalOperator();
         // UtilityOperator.timeStampOperator();
         // UtilityOperator.timeoutOperator();
-         UtilityOperator.usingOperator();
+        UtilityOperator.usingOperator();
     }
 
     /**
