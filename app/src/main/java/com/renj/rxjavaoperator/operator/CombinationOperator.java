@@ -23,7 +23,7 @@ import rx.observables.JoinObservable;
  * <p>
  * 创建时间：2017-12-06   17:26
  * <p>
- * 描述：组合操作符<br/>
+ * 描述：RxJava2操作符之组合操作符<br/>
  * 包含 merger/concat、zip、join、combineLatest、switchOnNext/switchMap、startWith、and/then/when
  * <p>
  * 修订历史：

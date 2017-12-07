@@ -8,6 +8,7 @@ import com.renj.rxjavaoperator.operator.CreateOperator;
 import com.renj.rxjavaoperator.operator.ErrorHandlerOperator;
 import com.renj.rxjavaoperator.operator.FilterOperator;
 import com.renj.rxjavaoperator.operator.TransformOperator;
+import com.renj.rxjavaoperator.operator.UtilityOperator;
 
 /**
  * RxJava2 操作符
@@ -32,7 +33,24 @@ public class MainActivity extends AppCompatActivity {
         // rxCombinationOperator();
 
         // 调用错误处理操作符类中的方法
-        rxErrorHandlerOperator();
+        // rxErrorHandlerOperator();
+
+        // 调用辅助操作符类中的方法
+        rxUtilityOperator();
+    }
+
+    /**
+     * 调用辅助操作符类中的方法
+     */
+    private void rxUtilityOperator() {
+        // UtilityOperator.delauOperator();
+        // UtilityOperator.doOperator();
+        // UtilityOperator.threadSchedulerOperator();
+        // UtilityOperator.notifycationOperator();
+        // UtilityOperator.timeIntervalOperator();
+        // UtilityOperator.timeStampOperator();
+        // UtilityOperator.timeoutOperator();
+         UtilityOperator.usingOperator();
     }
 
     /**
