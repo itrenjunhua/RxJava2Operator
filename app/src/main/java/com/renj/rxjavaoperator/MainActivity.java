@@ -35,8 +35,14 @@ public class MainActivity extends AppCompatActivity {
      * 调用组合操作符类中的方法
      */
     private void rxCombinationOperator() {
-        CombinationOperator.joinOperator();
-        // CombinationOperator.andThenWhenOperator();
+        // CombinationOperator.mergeOperator();
+        // CombinationOperator.concatOperator();
+        // CombinationOperator.zipOperator();
+        // CombinationOperator.joinOperator();
+        // CombinationOperator.combineLatestOperator();
+        // CombinationOperator.switchOperator();
+        // CombinationOperator.startWithOperator();
+        CombinationOperator.andThenWhenOperator();
     }
 
     /**
