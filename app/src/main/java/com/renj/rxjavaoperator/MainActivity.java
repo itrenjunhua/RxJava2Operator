@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.renj.rxjavaoperator.operator.CombinationOperator;
 import com.renj.rxjavaoperator.operator.CreateOperator;
+import com.renj.rxjavaoperator.operator.ErrorHandlerOperator;
 import com.renj.rxjavaoperator.operator.FilterOperator;
 import com.renj.rxjavaoperator.operator.TransformOperator;
 
@@ -28,7 +29,23 @@ public class MainActivity extends AppCompatActivity {
         // rxFilterOperator();
 
         // 调用组合操作符类中的方法
-        rxCombinationOperator();
+        // rxCombinationOperator();
+
+        // 调用错误处理操作符类中的方法
+        rxErrorHandlerOperator();
+    }
+
+    /**
+     * 调用错误处理操作符类中的方法
+     */
+    private void rxErrorHandlerOperator() {
+        // ErrorHandlerOperator.onErrorReturnOperator();
+        // ErrorHandlerOperator.onErrorResumeNextOperator1();
+        // ErrorHandlerOperator.onErrorResumeNextOperator2();
+        // ErrorHandlerOperator.onErrorReturnItemOperator();
+        // ErrorHandlerOperator.onExceptionResumeNextOperator();
+        // ErrorHandlerOperator.retryOperator();
+        ErrorHandlerOperator.retryWhenOperator();
     }
 
     /**
