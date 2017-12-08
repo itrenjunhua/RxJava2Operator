@@ -111,7 +111,7 @@ RxJava2 中常用操作符代码练习及说明。
 	* Concat 操作符不会让合并的Observables发射的数据交错，它会按顺序一个接着一个发射多个Observables的发射项 与 `merge()` 操作符对比查看
 * reduce()：对Observable发射的每一项数据应用一个函数，但是只发射最终的值，`scan()` 操作符做比较
 ## 连接操作符
-###什么是可连接的 Observable(Connectable Observable)：
+### 什么是可连接的 Observable(Connectable Observable)：
 > 可连接的 Observable 是一种特殊的 Observable 对象，并不是 订阅(Subscrib) 的时候就发射数据，而是只有对其调用 `connect()` 操作符的时候才开始发射数据，所以可以用来更灵活的控制数据发射的时机。
 
 * publish()：将一个普通的 Observable 对象转化为一个可连接的(Connectable Observable)。需要注意的是如果发射数据已经开始了再进行订阅只能接收以后发射的数据
