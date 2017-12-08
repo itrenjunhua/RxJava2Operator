@@ -112,7 +112,7 @@ public class ConnectableOperator {
      * 操作符：replay() 操作符<br/>
      * 说明：Replay 操作符返回一个 Connectable Observable 对象并且可以缓存其发射过的数据，这样即使有订阅者在其发射数据之后进行订阅也能收到其之前发射过的数据。<br/><br/>
      * <b>注意：<br/>&nbsp;&nbsp;&nbsp;&nbsp;
-     * ① 使用 {@code replay()} 操作符我们最好还是限定其缓存的大小，否则缓存的数据太多了可会占用很大的一块内存
+     * ① 使用 {@code replay()} 操作符我们最好还是限定其缓存的大小，否则缓存的数据太多了可会占用很大的一块内存，有多个重载方法可以指定缓存大小、运行线程的。
      * <br/>&nbsp;&nbsp;&nbsp;&nbsp;
      * ② {@code replay()} 操作符直接返回一个 Connectable Observable 对象,不用在调用 {@code publish()} 操作符</b>
      */
