@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.renj.rxjavaoperator.operator.CombinationOperator;
 import com.renj.rxjavaoperator.operator.ConditionalAndBooleanOperator;
+import com.renj.rxjavaoperator.operator.ConnectableOperator;
 import com.renj.rxjavaoperator.operator.CreateOperator;
 import com.renj.rxjavaoperator.operator.ErrorHandlerOperator;
 import com.renj.rxjavaoperator.operator.FilterOperator;
@@ -45,7 +46,20 @@ public class MainActivity extends AppCompatActivity {
         // rxConditionalAndBooleanOperator();
 
         // 调用算术和聚合操作符类中的方法
-        rxMathematicalAndAggregateOperator();
+        // rxMathematicalAndAggregateOperator();
+
+        // 调用连接操作符类中的方法
+        rxConnectableOperator();
+    }
+
+    /**
+     * 调用连接操作符类中的方法
+     */
+    private void rxConnectableOperator() {
+        // ConnectableOperator.publishOperator();
+        // ConnectableOperator.connectOperator();
+        // ConnectableOperator.refCountOperator();
+        ConnectableOperator.replayOperator();
     }
 
     /**
