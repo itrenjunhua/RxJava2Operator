@@ -85,7 +85,7 @@ public class ConditionalAndBooleanOperator {
     }
 
     /**
-     * 操作符：<br/>
+     * 操作符：sequenceEqual() 操作符<br/>
      * 说明：判断两个Observable是否按相同的数据序列。有多个重载方法<br/>
      * &nbsp;&nbsp;&nbsp;&nbsp;
      * 判断两个Observable发射的数据序列是否相同（发射的数据相同，数据的序列相同，结束的状态相同），如果相同返回 true，否则返回 false

@@ -19,9 +19,9 @@ import io.reactivex.functions.Function;
  * <p>
  * 描述：RxJava2之操作符错误处理操作符。包含：<br/>
  * 【 {@code onErrorReturn()} 操作符 {@link #onErrorReturnOperator()} 】、【 {@code onErrorResumeNext(Function)} 操作符 {@link #onErrorResumeNextOperator1()} 】、
- * 【 {@code onErrorResumeNext(Observable)} 操作符 {@link #onErrorResumeNextOperator2()} 】、【 {@code onErrorReturnItem} 操作符 {@link #onErrorReturnItemOperator()} 】、
- * 【 {@code onExceptionResumeNext} 操作符 {@link #onExceptionResumeNextOperator()} 】、【 {@code retry} 操作符 {@link #retryOperator()} 】、
- * 【 {@code retryWhen} 操作符 {@link #retryWhenOperator()} 】
+ * 【 {@code onErrorResumeNext(Observable)} 操作符 {@link #onErrorResumeNextOperator2()} 】、【 {@code onErrorReturnItem()} 操作符 {@link #onErrorReturnItemOperator()} 】、
+ * 【 {@code onExceptionResumeNext()} 操作符 {@link #onExceptionResumeNextOperator()} 】、【 {@code retry()} 操作符 {@link #retryOperator()} 】、
+ * 【 {@code retryWhen()} 操作符 {@link #retryWhenOperator()} 】
  * <br/><br/>
  * <b>ReactiveX 系列所有操作符以及RxJava2与RxJava1的操作符变化可查看 <a href="http://reactivex.io/documentation/operators.html">ReactiveX 操作符</a></b>
  * <p>
@@ -284,7 +284,7 @@ public class ErrorHandlerOperator {
 
     /**
      * 操作符：retryWhen() 操作符<br/>
-     * 说明：当错误发生时，retryWhen会接收onError的throwable作为参数，并根据定义好的函数返回一个Observable，如果这个Observable发射一个数据，就会重新订阅。
+     * 说明：当错误发生时，retryWhen会接收onError的throwable作为参数，并根据定义好的函数返回一个Observable，如果这个Observable发射一个数据，就会重新订阅这个Observable。
      */
     public static void retryWhenOperator() {
         Observable.create(new ObservableOnSubscribe<String>() {
