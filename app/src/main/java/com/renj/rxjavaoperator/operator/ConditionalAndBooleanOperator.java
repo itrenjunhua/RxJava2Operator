@@ -17,8 +17,14 @@ import io.reactivex.functions.Predicate;
  * <p>
  * 创建时间：2017-12-07   18:02
  * <p>
- * 描述：RxJava2操作符之条件和布尔操作符<br/>
- * 包含 all、amb、contains、sequenceEqual、isEmpty/defaultIfEmpty、skipUntil、skipWhile、takeUntil、takeWhile
+ * 描述：RxJava2操作符之条件和布尔操作符。包含：<br/>
+ * 【 {@code all()} 操作符 {@link #allOperator()} 】、【 {@code amb()} 操作符 {@link #ambOperator()} 】、
+ * 【 {@code contains()} 操作符 {@link #containsOperator()} 】、【 {@code sequenceEqual()} 操作符 {@link #sequenceEqualOperator()} 】、
+ * 【 {@code isEmpty()}/{@code defaultIfEmpty()} 操作符 {@link #emptyOperator()} 】、
+ * 【 {@code skipUntil()}/{@code skipWhile()} 操作符 {@link #skipOperator()} 】、
+ * 【 {@code takeUntil()}/{@code takeWhile()} 操作符 {@link #takeOperator()} 】
+ * <br/><br/>
+ * <b>ReactiveX 系列所有操作符以及RxJava2与RxJava1的操作符变化可查看 <a href="http://reactivex.io/documentation/operators.html">ReactiveX 操作符</a></b>
  * <p>
  * 修订历史：
  * <p>

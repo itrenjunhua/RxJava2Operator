@@ -20,8 +20,13 @@ import io.reactivex.schedulers.Schedulers;
  * <p>
  * 创建时间：2017-12-06   14:43
  * <p>
- * 描述：RxJava2操作符之变换操作符<br/>
- * 包含 map、flatMap、concatMap、reduce、scan、buffer、groupBy、window
+ * 描述：RxJava2操作符之变换操作符。包含：<br/>
+ * 【 {@code map()} 操作符 {@link #mapOpertor()} 】、【 {@code flatMap()} 操作符 {@link #flatMapOperator()} 】、
+ * 【 {@code concatMap()} 操作符 {@link #flatMapOperator()} 】、【 {@code reduce()} 操作符 {@link #reduceOperator()} 】、
+ * 【 {@code scan()} 操作符 {@link #scanOperator()} 】、【 {@code buffer()} 操作符 {@link #bufferOperator()} 】、
+ * 【 {@code groupBy()} 操作符 {@link #groupByOperator()} 】、【 {@code window()} 操作符 {@link #windowOperator()} 】
+ * <br/><br/>
+ * <b>ReactiveX 系列所有操作符以及RxJava2与RxJava1的操作符变化可查看 <a href="http://reactivex.io/documentation/operators.html">ReactiveX 操作符</a></b>
  * <p>
  * 修订历史：
  * <p>

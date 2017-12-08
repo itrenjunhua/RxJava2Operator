@@ -22,8 +22,14 @@ import io.reactivex.functions.Predicate;
  * <p>
  * 创建时间：2017-12-06   16:27
  * <p>
- * 描述：过滤操作符<br/>
- * 包含 filter、distinct、elementAt、debounce、ignoreElements、sample、first/firstElement、last/lastElement、skip/skipLast、take/takeLast
+ * 描述：RxJava2操作符之过滤操作符。包含：<br/>
+ * 【 {@code filter()} 操作符 {@link #filterOperator()} 】、【 {@code distinct()} 操作符 {@link #distinctOperator()} 】、
+ * 【 {@code elementAt()} 操作符 {@link #elementAtOperator()} 】、【 {@code debounce()} 操作符 {@link #debounceOperator()} 】、
+ * 【 {@code ignoreElements()} 操作符 {@link #ignoreElementsOperator()} 】、【 {@code sample()} 操作符 {@link #sampleOperator()} 】、
+ * 【 {@code first()}/{@code firstElement()} 操作符 {@link #firstOperator()} 】、【 {@code last()}/{@code lastElement()} 操作符 {@link #lastOperator()} 】、
+ * 【 {@code skip()}/{@code skipLast()} 操作符 {@link #skipOperator()} 】、【 {@code take()}/{@code takeLast()} 操作符 {@link #takeOperator()} 】
+ * <br/><br/>
+ * <b>ReactiveX 系列所有操作符以及RxJava2与RxJava1的操作符变化可查看 <a href="http://reactivex.io/documentation/operators.html">ReactiveX 操作符</a></b>
  * <p>
  * 修订历史：
  * <p>

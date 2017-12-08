@@ -17,8 +17,13 @@ import io.reactivex.functions.Function;
  * <p>
  * 创建时间：2017-12-07   14:53
  * <p>
- * 描述：RxJava2操作符之错误处理操作符<br/>
- * 包含 onErrorReturn、onErrorResumeNext(Function)、onErrorResumeNext(Observable)、onErrorReturnItem、onExceptionResumeNext、retry、retryWhen
+ * 描述：RxJava2之操作符错误处理操作符。包含：<br/>
+ * 【 {@code onErrorReturn()} 操作符 {@link #onErrorReturnOperator()} 】、【 {@code onErrorResumeNext(Function)} 操作符 {@link #onErrorResumeNextOperator1()} 】、
+ * 【 {@code onErrorResumeNext(Observable)} 操作符 {@link #onErrorResumeNextOperator2()} 】、【 {@code onErrorReturnItem} 操作符 {@link #onErrorReturnItemOperator()} 】、
+ * 【 {@code onExceptionResumeNext} 操作符 {@link #onExceptionResumeNextOperator()} 】、【 {@code retry} 操作符 {@link #retryOperator()} 】、
+ * 【 {@code retryWhen} 操作符 {@link #retryWhenOperator()} 】
+ * <br/><br/>
+ * <b>ReactiveX 系列所有操作符以及RxJava2与RxJava1的操作符变化可查看 <a href="http://reactivex.io/documentation/operators.html">ReactiveX 操作符</a></b>
  * <p>
  * 修订历史：
  * <p>

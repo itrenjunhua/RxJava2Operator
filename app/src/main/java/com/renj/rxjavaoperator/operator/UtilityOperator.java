@@ -26,8 +26,14 @@ import io.reactivex.schedulers.Timed;
  * <p>
  * 创建时间：2017-12-07   16:50
  * <p>
- * 描述：RxJava2操作符之辅助操作符<br/>
- * 包含 delay、doXxx、subscribeOn、observeOn、materialize、dematerialize、timeInterval、timestamp、timeout、using
+ * 描述：RxJava2操作符之辅助操作符。包含：<br/>
+ * 【 {@code delay()} 操作符 {@link #delayOperator()} 】、【 {@code doXxx()} 操作符 {@link #doOperator()} 】、
+ * 【 {@code subscribeOn()} 操作符 {@link #threadSchedulerOperator()} 】、【 {@code observeOn()} 操作符 {@link #threadSchedulerOperator()} 】、
+ * 【 {@code materialize()} 操作符 {@link #notifycationOperator()} 】、【 {@code dematerialize()} 操作符 {@link #notifycationOperator()} 】、
+ * 【 {@code timeInterval()} 操作符 {@link #timeIntervalOperator()} 】、【 {@code timestamp()} 操作符 {@link #timeStampOperator()} 】、
+ * 【 {@code timeout()} 操作符 {@link #timeoutOperator()} 】、【 {@code using()} 操作符 {@link #usingOperator()} 】
+ * <br/><br/>
+ * <b>ReactiveX 系列所有操作符以及RxJava2与RxJava1的操作符变化可查看 <a href="http://reactivex.io/documentation/operators.html">ReactiveX 操作符</a></b>
  * <p>
  * 修订历史：
  * <p>
@@ -38,7 +44,7 @@ public class UtilityOperator {
      * 操作符：delay() 操作符<br/>
      * 说明：延迟一段时间发射结果数据。多个重载方法，可以指定运行线程、出错时是否延迟发送等
      */
-    public static void delauOperator() {
+    public static void delayOperator() {
         Observable.just(0, 1, 2)
                 .delay(2000, TimeUnit.MILLISECONDS)
                 .subscribe(new Consumer<Integer>() {
@@ -106,9 +112,10 @@ public class UtilityOperator {
 
     /**
      * 操作符：materialize()、dematerialize() 操作符<br/>
-     * 说明：Meterialize操作符将OnNext/OnError/OnComplete都转化为一个Notification对象并按照原来的顺序发射出来,dematerialize相反
+     * 说明：Meterialize 操作符将 OnNext/OnError/OnComplete 都转化为一个 Notification 对象并按照原来的顺序发射出来,dematerialize 相反
      */
     public static void notifycationOperator() {
+        // materialize()
         Observable.just("RxJava Notifycation1", "RxJava Notifycation2")
                 .materialize()
                 .subscribe(new Consumer<Notification<String>>() {
@@ -119,6 +126,7 @@ public class UtilityOperator {
                     }
                 });
 
+        // dematerialize()；将 Notification 对象转换为其他
         Observable.just(Notification.createOnNext("RxJava Notifycation1"), Notification.createOnNext("RxJava Notifycation2"))
                 .<String>dematerialize()
                 .subscribe(new Consumer<String>() {

@@ -20,8 +20,15 @@ import io.reactivex.functions.Consumer;
  * <p>
  * 创建时间：2017-12-06   10:52
  * <p>
- * 描述：RxJava2操作符之创建操作符<br/>
- * 主要包含 create、just、fromXxx、empty、never、error、range、defer、repat、timer、interval、intervalRange 操作符及他们的重载方法
+ * 描述：RxJava2操作符之创建操作符。包含：<br/>
+ * 【 {@code create()} 操作符 {@link #createOperator()} 】、【 {@code just()} 操作符 {@link #justOperator(Object)}/{@link #justOperator(Object[])} 】、
+ * 【 {@code fromXxx()} 操作符 {@link #fromOperator()} 】、【 {@code empty()} 操作符 {@link #specialOperator()} 】、
+ * 【 {@code never()} 操作符 {@link #specialOperator()} 】、【 {@code error()} 操作符 {@link #specialOperator()} 】、
+ * 【 {@code range()} 操作符 {@link #rangeOperator()} 】、【 {@code defer()} 操作符 {@link #deferOperator()} 】、
+ * 【 {@code repat()} 操作符 {@link #repatOperator()} 】、【 {@code timer()} 操作符 {@link #timerOperator()} 】、
+ * 【 {@code interval()} 操作符 {@link #intervalOperator()} 】、【 {@code intervalRange()} 操作符 {@link #intervalRangeOperator()} 】
+ * <br/><br/>
+ * <b>ReactiveX 系列所有操作符以及RxJava2与RxJava1的操作符变化可查看 <a href="http://reactivex.io/documentation/operators.html">ReactiveX 操作符</a></b>
  * <p>
  * 修订历史：
  * <p>

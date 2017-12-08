@@ -23,8 +23,15 @@ import rx.observables.JoinObservable;
  * <p>
  * 创建时间：2017-12-06   17:26
  * <p>
- * 描述：RxJava2操作符之组合操作符<br/>
- * 包含 merger/concat、zip、join、combineLatest、switchOnNext/switchMap、startWith、and/then/when
+ * 描述：RxJava2操作符之组合操作符。包含：<br/>
+ * 【 {@code merger()} 操作符 {@link #mergeOperator()} 】、【 {@code concat()} 操作符 {@link #concatOperator()} 】、
+ * 【 {@code zip()} 操作符 {@link #zipOperator()} 】、【 {@code join()} 操作符 {@link #joinOperator()} 】、
+ * 【 {@code combineLatest()} 操作符 {@link #combineLatestOperator()} 】、
+ * 【 {@code switchOnNext()}/{@code switchMap()} 操作符 {@link #switchOperator()} 】、
+ * 【 {@code startWith()} 操作符 {@link #startWithOperator()}] 】、
+ * 【 {@code and()}/{@code then()}/{@code when()} 操作符 {@link #andThenWhenOperator()} 】
+ * <br/><br/>
+ * <b>ReactiveX 系列所有操作符以及RxJava2与RxJava1的操作符变化可查看 <a href="http://reactivex.io/documentation/operators.html">ReactiveX 操作符</a></b>
  * <p>
  * 修订历史：
  * <p>
@@ -35,7 +42,7 @@ public class CombinationOperator {
      * 操作符：merger() 操作符<br/>
      * 说明：将两个后多个Observable/Iterable发射的数据组合并成一个。
      * <br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;
-     * Merge 操作符可能会让合并的Observables发射的数据交错(可以使用 Concat 操作符【查看 {@link #concatOperator()} 】,不会让数据交错，它会按顺序一个接着一个发射多个Observables的发射项)。
+     * Merge 操作符可能会让合并的Observables发射的数据交错(可以使用 Concat 操作符【 查看 {@link #concatOperator()}  】,不会让数据交错，它会按顺序一个接着一个发射多个Observables的发射项)。
      *
      * @see #concatOperator()
      */
@@ -55,7 +62,7 @@ public class CombinationOperator {
      * 操作符：concat() 操作符<br/>
      * 说明：将两个后多个Observable/Iterable发射的数据组合并成一个。
      * <br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;
-     * Concat 操作符不会让合并的Observables发射的数据交错，它会按顺序一个接着一个发射多个Observables的发射项(而 Merge 操作符【查看 {@link #mergeOperator()} 】,可能会让数据交错)。
+     * Concat 操作符不会让合并的Observables发射的数据交错，它会按顺序一个接着一个发射多个Observables的发射项(而 Merge 操作符【 查看 {@link #mergeOperator()}  】,可能会让数据交错)。
      *
      * @see #mergeOperator()
      */

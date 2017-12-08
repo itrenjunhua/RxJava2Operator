@@ -8,11 +8,13 @@ import com.renj.rxjavaoperator.operator.ConditionalAndBooleanOperator;
 import com.renj.rxjavaoperator.operator.CreateOperator;
 import com.renj.rxjavaoperator.operator.ErrorHandlerOperator;
 import com.renj.rxjavaoperator.operator.FilterOperator;
+import com.renj.rxjavaoperator.operator.MathematicalAndAggregateOperator;
 import com.renj.rxjavaoperator.operator.TransformOperator;
 import com.renj.rxjavaoperator.operator.UtilityOperator;
 
 /**
- * RxJava2 操作符
+ * RxJava2 常用操作符<br/>
+ * ReactiveX 系列所有操作符以及RxJava2与RxJava1的操作符变化可查看 <a href="http://reactivex.io/documentation/operators.html">ReactiveX 操作符</a>
  */
 public class MainActivity extends AppCompatActivity {
 
@@ -40,7 +42,18 @@ public class MainActivity extends AppCompatActivity {
         // rxUtilityOperator();
 
         // 调用条件和布尔操作符类中的方法
-        rxConditionalAndBooleanOperator();
+        // rxConditionalAndBooleanOperator();
+
+        // 调用算术和聚合操作符类中的方法
+        rxMathematicalAndAggregateOperator();
+    }
+
+    /**
+     * 调用算术和聚合操作符类中的方法
+     */
+    private void rxMathematicalAndAggregateOperator() {
+        // MathematicalAndAggregateOperator.countOperator();
+        MathematicalAndAggregateOperator.collectOperator();
     }
 
     /**
@@ -60,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
      * 调用辅助操作符类中的方法
      */
     private void rxUtilityOperator() {
-        // UtilityOperator.delauOperator();
+        // UtilityOperator.delayOperator();
         // UtilityOperator.doOperator();
         // UtilityOperator.threadSchedulerOperator();
         // UtilityOperator.notifycationOperator();
