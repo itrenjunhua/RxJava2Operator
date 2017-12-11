@@ -1,5 +1,5 @@
 # RxJava2Operator
-RxJava2 中常用操作符和Subject常用子类代码练习及说明。
+RxJava2 中常用操作符和Subject常用子类代码练习及说明。  
 *ReactiveX 系列所有操作符以及RxJava2与RxJava1的操作符变化可查看 [ReactiveX 操作符](http://reactivex.io/documentation/operators.html)*
 
 ***
@@ -129,19 +129,19 @@ RxJava2 中常用操作符和Subject常用子类代码练习及说明。
 # （二）Subject常用子类说明
 ## AsyncSubject 类
 使用AsyncSubject无论输入多少参数，永远只输出最后一个参数
-> ① 一定要用Subcect.create()的方式创建并使用，不要用just(T)、from(T)、create(T)创建，否则会导致失效
+> ① 一定要用Subcect.create()的方式创建并使用，不要用just(T)、from(T)、create(T)创建，否则会导致失效  
 > ② 如果因为发生了错误而终止，AsyncSubject 将不会发射任何数据，只是简单的向前传递这个错误通知
 ## BehaviorSubject类
 发送离订阅最近的上一个值，没有上一个值的时候会发送默认值
-> ① 一定要用Subcect.create()的方式创建并使用，不要用just(T)、from(T)、create(T)创建，否则会导致失效
+> ① 一定要用Subcect.create()的方式创建并使用，不要用just(T)、from(T)、create(T)创建，否则会导致失效  
 > ② 如果遇到错误**程序会直接中断**
 ## PublishSubject
 从哪里订阅就从哪里开始发送数据，与`ReplaySubject` 类做比较
-> ① 一定要用Subcect.create()的方式创建并使用，不要用just(T)、from(T)、create(T)创建，否则会导致失效
+> ① 一定要用Subcect.create()的方式创建并使用，不要用just(T)、from(T)、create(T)创建，否则会导致失效  
 > ② 遇到错误，如果重写些错误回调，向前传递这个错误通知，没有写错误回调的话，程序将直接报错，抛出异常，终止程序
 ## ReplaySubject
 无论何时订阅，都会将所有历史订阅内容全部发出，与 `PublishSubject` 类做比较
-> ① 一定要用Subcect.create()的方式创建并使用，不要用just(T)、from(T)、create(T)创建，否则会导致失效
+> ① 一定要用Subcect.create()的方式创建并使用，不要用just(T)、from(T)、create(T)创建，否则会导致失效  
 > ② 遇到错误，如果重写些错误回调，向前传递这个错误通知，没有写错误回调的话，程序将直接报错，抛出异常，终止程序
 ## SerializedSubject
 在并发情况下，不推荐使用通常的Subject对象，而是推荐使用 SerializedSubject，并发时只允许一个线程调用onNext等方法
