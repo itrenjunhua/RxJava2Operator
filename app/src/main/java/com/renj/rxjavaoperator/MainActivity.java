@@ -67,7 +67,8 @@ public class MainActivity extends AppCompatActivity {
         // SubjectTest.asyncSubject();
         // SubjectTest.behaviorSubject();
         // SubjectTest.publishSubject();
-        SubjectTest.replaySubject();
+        // SubjectTest.replaySubject();
+        SubjectTest.serializedSubject();
     }
 
     /**

@@ -9,7 +9,6 @@ import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 import io.reactivex.observables.ConnectableObservable;
-import rx.Subscription;
 
 /**
  * ======================================================================
@@ -54,7 +53,7 @@ public class ConnectableOperator {
      * 操作符：connect() 操作符<br/>
      * 说明：Connect操作符就是用来触发 Connectable Observable 发射数据的。
      * <br/>&nbsp;&nbsp;&nbsp;&nbsp;
-     * 调用 {@code connect()} 操作符后会返回一个 {@link Subscription} 对象，通过这个 {@link Subscription} 对象，我们可以调用其{@code unsubscribe()} 方法来终止数据的发射；
+     * 调用 {@code connect()} 操作符后会返回一个 {@link Disposable} 对象，通过这个 {@link Disposable} 对象，我们可以调用其{@code dispose()} 方法来终止数据的发射；
      * 另外，即使还没有订阅者订阅的时候就调用 {@code connect()} 操作符也是可以使其开始发射数据的(只要调用了 {@code connect()} 方法就会开始发射数据，不管是否有订阅者订阅的事件)。
      */
     public static void connectOperator() {

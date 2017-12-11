@@ -116,7 +116,7 @@ RxJava2 中常用操作符代码练习及说明。
 
 * publish()：将一个普通的 Observable 对象转化为一个可连接的(Connectable Observable)。需要注意的是如果发射数据已经开始了再进行订阅只能接收以后发射的数据
 * connect()：Connect操作符就是用来触发 Connectable Observable 发射数据的
-	* 调用 `connect()` 操作符后会返回一个 Subscription 对象，通过这个 Subscription 对象，我们可以调用其 `unsubscribe()` 方法来终止数据的发射；另外，即使还没有订阅者订阅的时候就调用 `connect()` 操作符也是可以使其开始发射数据的(只要调用了 `connect()` 方法就会开始发射数据，不管是否有订阅者订阅的事件)。
+	* 调用 `connect()` 操作符后会返回一个 Disposable 对象，通过这个 Disposable 对象，我们可以调用其 `dispose()` 方法来终止数据的发射；另外，即使还没有订阅者订阅的时候就调用 `connect()` 操作符也是可以使其开始发射数据的(只要调用了 `connect()` 方法就会开始发射数据，不管是否有订阅者订阅的事件)。
 * refCount()：是将一个 Connectable Observable 对象再重新转化为一个普通的 Observable 对象，这时候订阅者进行订阅时就会触发数据的发射
 * replay()：返回一个 Connectable Observable 对象并且可以缓存其发射过的数据，这样即使有订阅者在其发射数据之后进行订阅也能收到其之前发射过的数据
 	* <b>注意：
