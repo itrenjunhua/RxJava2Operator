@@ -11,6 +11,7 @@ import com.renj.rxjavaoperator.operator.CreateOperator;
 import com.renj.rxjavaoperator.operator.ErrorHandlerOperator;
 import com.renj.rxjavaoperator.operator.FilterOperator;
 import com.renj.rxjavaoperator.operator.MathematicalAndAggregateOperator;
+import com.renj.rxjavaoperator.operator.SubjectTest;
 import com.renj.rxjavaoperator.operator.TransformOperator;
 import com.renj.rxjavaoperator.operator.UtilityOperator;
 
@@ -53,7 +54,20 @@ public class MainActivity extends AppCompatActivity {
         // rxConnectableOperator();
 
         // 调用转换操作符类中的方法
-        rxConvertOperator();
+        // rxConvertOperator();
+
+        // Subject示例
+        rxSubjectTest();
+    }
+
+    /**
+     * Subject示例
+     */
+    private void rxSubjectTest() {
+        // SubjectTest.asyncSubject();
+        // SubjectTest.behaviorSubject();
+        // SubjectTest.publishSubject();
+        SubjectTest.replaySubject();
     }
 
     /**
