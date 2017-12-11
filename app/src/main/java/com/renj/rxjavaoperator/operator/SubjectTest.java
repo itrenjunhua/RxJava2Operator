@@ -18,7 +18,8 @@ import io.reactivex.subjects.Subject;
  * <p>
  * 描述：RxJava2之Subject使用示例，包括：<br/>
  * 【 {@code AsyncSubject} 类 {@link #asyncSubject()} 】、【 {@code BehaviorSubject} 类 {@link #behaviorSubject()} 】、
- * 【 {@code PublishSubject} 类 {@link #publishSubject()} 】、【 {@code ReplaySubject} 类 {@link #replaySubject()} 】
+ * 【 {@code PublishSubject} 类 {@link #publishSubject()} 】、【 {@code ReplaySubject} 类 {@link #replaySubject()} 】、
+ * 【 {@code SerializedSubject} 类(注意，在 RxJava2 SerializedSubject 类修饰符修改为默认的，不再是 public) {@link #serializedSubject()} 】
  * <p>
  * 修订历史：
  * <p>
@@ -264,8 +265,8 @@ public class SubjectTest {
 
     /**
      * 操作符：SerializedSubject 类<br/>
-     * 说明：在并发情况下，不推荐使用通常的Subject对象，而是推荐使用SerializedSubject，并发时只允许一个线程调用onNext等方法.<br/>
-     * 使用 SerializedSubject 只需要封装原来的 Subject 即可。
+     * 说明：在并发情况下，不推荐使用通常的Subject对象，而是推荐使用 SerializedSubject，并发时只允许一个线程调用onNext等方法.<br/>
+     * 将一个普通的 Subject 变换为 SerializedSubject 只需要调用 toSerialized() 方法即可。
      */
     public static void serializedSubject() {
         PublishSubject<Integer> publishSubject = PublishSubject.create();

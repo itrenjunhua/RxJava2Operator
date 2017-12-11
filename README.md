@@ -1,8 +1,9 @@
 # RxJava2Operator
-RxJava2 中常用操作符代码练习及说明。  
+RxJava2 中常用操作符和Subject常用子类代码练习及说明。
 *ReactiveX 系列所有操作符以及RxJava2与RxJava1的操作符变化可查看 [ReactiveX 操作符](http://reactivex.io/documentation/operators.html)*
 
-# 项目中主要包含的操作符展示
+***
+# （一）项目中主要包含的操作符展示
 ## 创建操作符
 * create()：通过调用观察者的方法从头创建一个Observable
 * just()：将对象或者对象集合转换为一个会发射这些对象的Observable
@@ -12,7 +13,7 @@ RxJava2 中常用操作符代码练习及说明。
 * defer()：在观察者订阅之前不创建这个Observable，当被订阅时为每一个观察者创建一个新的Observable
 * repat()：**作用在Observable上**,会对其重复发射count次，当没指定次数时，将一直不停的发射
 * timer()：在指定时间后发射一个数字0，注意其默认运行在RxJava的 computation 线程，可以指定运行的线程
-* interval()：间隔一段时间发射一个整数，整数从0开始每发射，后面的一个数就在原来的基础上加1。  
+* interval()：间隔一段时间发射一个整数，整数从0开始每发射，后面的一个数就在原来的基础上加1。
 注意其默认运行在RxJava的 computation 线程，可以指定运行的线程，同时又多个重载方法，还可以指定发射第一个数之前的延迟时间
 * intervalRange()：和 `interval()` 操作符类似，不同的是可以指定数字的开始大小和一共发射的个数，可以指定线程，默认在 RxJava 的 computation 线程
 ## 变换操作符
@@ -46,8 +47,8 @@ RxJava2 中常用操作符代码练习及说明。
 	* ② 第一个参数，接收从源Observable发射来的数据，并返回一个Observable，这个Observable的生命周期决定了源Observable发射出来数据的有效期；
 	* ③ 第二个参数，接收从目标Observable发射来的数据，并返回一个Observable，这个Observable的生命周期决定了目标Observable发射出来数据的有效期；
 	* ④ 第三个参数，接收从源Observable和目标Observable发射来的数据，并返回最终组合完的数据。
-* combineLatest()：当两个Observables中的任何一个发射了一个数据时，通过一个指定的函数组合每个Observable发射的最新数据（一共两个数据），然后发射这个函数的结果.  
-比如：Observable1发射了A并且Observable2发射了B和C，`combineLatest()`将会分组处理AB和AC。  
+* combineLatest()：当两个Observables中的任何一个发射了一个数据时，通过一个指定的函数组合每个Observable发射的最新数据（一共两个数据），然后发射这个函数的结果.
+比如：Observable1发射了A并且Observable2发射了B和C，`combineLatest()`将会分组处理AB和AC。
 	* 必须满足的两个条件:
 		* ① 所有的Observable都发射过数据；
 		* ② 满足条件1的时候任何一个Observable发射一个数据，就将所有Observable最新发射的数据按照提供的函数组装起来发射出去。
@@ -55,7 +56,7 @@ RxJava2 中常用操作符代码练习及说明。
 		* **在这两个条件下,可能会忽略掉一些发射的数据.**
 * switchOnNext()/switchMap()：将一个发射Observable序列的Observable转换为这样一个Observable：它逐个发射那些Observable最近发射的数据。用来将一个发射多个小Observable的源Observable转化为一个Observable，然后发射这多个小Observable所发射的数据。
 	*  **需要注意的就是，如果一个小的Observable正在发射数据的时候，源Observable又发射出一个新的小Observable，则前一个Observable发射的数据会被抛弃，直接发射新的小Observable所发射的数据。**
-* startWith()：在发射原来的Observable的数据序列之前，先发射一个指定的数据序列或数据项(在数据序列的开头插入一条指定的项)。  
+* startWith()：在发射原来的Observable的数据序列之前，先发射一个指定的数据序列或数据项(在数据序列的开头插入一条指定的项)。
      * 这个指定的项可以是单个的发射项；也可以是数组、列表或者一个Observable。
 * and()/then()/when()：通过模式(And条件)和计划(Then次序)组合两个或多个Observable发射的数据集
 	* 注意：
@@ -124,3 +125,52 @@ RxJava2 中常用操作符代码练习及说明。
      * ② `replay()` 操作符直接返回一个 Connectable Observable 对象,不用在调用 `publish()` 操作符</b>
 ## 转换操作符
 * toXxx()：将 Observable 转换为其它的对象或数据结构（`toList()`、`toMap()`、`toMultimap()`、...）
+***
+# （二）Subject常用子类说明
+## AsyncSubject 类
+使用AsyncSubject无论输入多少参数，永远只输出最后一个参数
+> ① 一定要用Subcect.create()的方式创建并使用，不要用just(T)、from(T)、create(T)创建，否则会导致失效
+> ② 如果因为发生了错误而终止，AsyncSubject 将不会发射任何数据，只是简单的向前传递这个错误通知
+## BehaviorSubject类
+发送离订阅最近的上一个值，没有上一个值的时候会发送默认值
+> ① 一定要用Subcect.create()的方式创建并使用，不要用just(T)、from(T)、create(T)创建，否则会导致失效
+> ② 如果遇到错误**程序会直接中断**
+## PublishSubject
+从哪里订阅就从哪里开始发送数据，与`ReplaySubject` 类做比较
+> ① 一定要用Subcect.create()的方式创建并使用，不要用just(T)、from(T)、create(T)创建，否则会导致失效
+> ② 遇到错误，如果重写些错误回调，向前传递这个错误通知，没有写错误回调的话，程序将直接报错，抛出异常，终止程序
+## ReplaySubject
+无论何时订阅，都会将所有历史订阅内容全部发出，与 `PublishSubject` 类做比较
+> ① 一定要用Subcect.create()的方式创建并使用，不要用just(T)、from(T)、create(T)创建，否则会导致失效
+> ② 遇到错误，如果重写些错误回调，向前传递这个错误通知，没有写错误回调的话，程序将直接报错，抛出异常，终止程序
+## SerializedSubject
+在并发情况下，不推荐使用通常的Subject对象，而是推荐使用 SerializedSubject，并发时只允许一个线程调用onNext等方法
+> 将一个普通的 Subject 变换为 SerializedSubject 只需要调用 toSerialized() 方法即可。
+
+***
+# （三）包含RxBus测试类
+### 使用：
+
+    // 发送端：
+    RxBus.newInstance().post("aaa");
+
+    // 接受端：
+    Disposable subscribe = RxBus.newInstance().tObservable(String.class).subscribe(new Consumer () {
+        @Override
+        public void accept(String s) throws Exception {
+            // 处理结果
+            // ...
+        }
+    });
+
+    // 另外需要注意在onDestroy()方法中取消订阅：
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (subscribe.isDisposed()) {
+            subscribe.dispose();
+        }
+        // 如果发送了粘性事件，需要清除所有的粘性事件
+        // RxBus.newInstance().clearStickyEvent();
+    }
+
